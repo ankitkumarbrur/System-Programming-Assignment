@@ -23,6 +23,11 @@ ASC {                                           return ASC;                     
 DESC {                                          return DESC;                                }
 ORDER {                                         return ORDER;                               }
 BY {                                            return BY;                                  }
+LOW_PRIORITY {                                  return LOW_PRIORITY;                        }
+QUICK {                                         return QUICK;                               }
+IGNORE {                                        return IGNORE;                              }
+AS {                                            return AS;                                  }
+PARTITION {                                     return PARTITION;                           }
 {DIGIT} {                                       yylval=atoi(yytext); return DIGIT;          }
 {FLOAT} {                                       yylval=atof(yytext); return DIGIT;          }
 TOP {     				                        return TOP;                                 }
