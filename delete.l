@@ -35,9 +35,11 @@ PARTITION {                                     return PARTITION;               
 TOP {     				                        return TOP;                                 }
 PERCENT {                                       return PERCENT;                             }
 IN {    	                                	return IN;                                  }
-;|\n { 											return 0;   			                    }
+\n { 											return 0;   			                    }
 {IDENTIFIER} { 					                return IDENTIFIER;		                    }
 {LITERAL} {                                     return LITERAL;                             }
-=|\(|\)|, {									    return *yytext;		                        }
->|<|>=|<= {                     				return OPERATOR;                            } 
+=|\(|\)|,|; {									    return *yytext;		                        }
+>|<|>=|<= {                     				return OPERATOR;                            }
+[ \t] ;
+. {												return ANY;									}
 %%
